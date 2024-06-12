@@ -12,7 +12,7 @@
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
+<meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -183,74 +183,8 @@
 <li><input disabled="" type="checkbox"> NotePad++(可有可无)</li>
 <li><input disabled="" type="checkbox"> 科学上网工具(最好有)</li>
 </ul>
-<h1 id="xx-启动！"><a href="#xx-启动！" class="headerlink" title="xx 启动！"></a><del>xx 启动！</del></h1><h2 id="Github安装"><a href="#Github安装" class="headerlink" title="Github安装"></a>Github安装</h2><p>先把这个搞定</p>
-<p>安装过程每一项的详细解释参看 Github安装详解，在有一项选择默认编辑器时，如果安装了NotePad++，选NotePad++</p>
-<p>安装完成后会有</p>
-<img src="/2024/06/12/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/1.png" class="" title="截图">
-
-<p>在<code>Git CMD</code>中输入命令配置</p>
-<p><code>git config --global user.email &quot;xxx&quot;</code><br><code>git config --global user.name &quot;xxx&quot;</code></p>
-<h2 id="Node-JS安装"><a href="#Node-JS安装" class="headerlink" title="Node.JS安装"></a>Node.JS安装</h2><p>没啥好说的， <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">清华源下载链接</a>，下载太慢就开个代理，有个神奇的路子是，某个软件下载太慢，可以下个<u>联想应用商店</u>，这里面的软件下载的很快</p>
-<p>安装完成后验证下<code>node -v</code></p>
-<h2 id="npm安装"><a href="#npm安装" class="headerlink" title="npm安装"></a>npm安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry=http://registry.npm.taobao.org <span class="comment">#安装淘宝源的 cnpm 管理器</span></span><br><span class="line">set-ExecutionPolicy RemoteSigned <span class="comment">#允许在本地运行脚本</span></span><br></pre></td></tr></table></figure>
-
-<p>这条命令的目的是通过npm全局安装cnpm，并使用淘宝镜像作为安装源</p>
-<ul>
-<li><p><code>--no-fund</code>：这个选项，用于禁用自动展示资助商信息。</p>
-</li>
-<li><p>执行 <code>set-ExecutionPolicy RemoteSigned</code>，你将设置 PowerShell 的执行策略为 <code>RemoteSigned</code>。这意味着你可以在本地计算机上创建未签名的脚本并执行，但是从远程计算机下载的脚本必须经过数字签名才能执行，以提高安全性</p>
-</li>
-</ul>
-<h2 id="hexo框架安装与配置"><a href="#hexo框架安装与配置" class="headerlink" title="hexo框架安装与配置"></a>hexo框架安装与配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<p>配置</p>
-<ul>
-<li>选择一个目标位置创建Blog文件夹（这里选择C:）<br><code>mkdir blog</code><br><code>cd blog</code></li>
-<li>初始化，在blog目录下右击, <code>Open Git Bash here</code>, 然后<br><code>hexo init #win环境下无需sudo，管理员模式启动，在git中切换到blog目录下输入该命令</code></li>
-</ul>
-<p>至此，hexo其实已经配置完成了，blog目录下有hexo的相关文件，接下来是用hexo写博客配置的关键命令</p>
-<ul>
-<li><p>本地预览<br><code>hexo server #或 hexo s 启动预览</code><br>进入 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 本地访问地址</p>
-</li>
-<li><p><code>hexo new &quot;我的第一篇文章&quot; #或 hexo n 创建新的文章</code></p>
-</li>
-<li><p><code>hexo clean #或 hexo c 清理</code></p>
-</li>
-<li><p><code>hexo generate #或 hexo g 生成</code></p>
-</li>
-<li><p><code>hexo deploy #或 hexo d部署到远端，这个要先部署到Git</code></p>
-</li>
-</ul>
-<h2 id="部署到Git"><a href="#部署到Git" class="headerlink" title="部署到Git"></a>部署到Git</h2><ol>
-<li><p>创建一个新的仓库，仓库名必须是 用户名.github.io的形式，仓库必须是public</p>
-</li>
-<li><p>在blog目录下安装git部署插件<code>cnpm install --save hexo-deployer-git</code></p>
-</li>
-<li><p>修改blog目录下的<code>_config.yml </code></p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/entropy36/entropy36.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span> <span class="comment"># 这里，对应你在安装git时决定初始化新项目(仓库)的主干名字选择</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-<p>这时候就可以用命令<code>hexo d</code>部署到远端了</p>
-<h2 id="换皮"><a href="#换皮" class="headerlink" title="换皮"></a>换皮</h2><p>找到心仪的主题，在blog目录下</p>
-<p><code>git clone https://github.com/litten/hexo-theme-yilia.git themes/yilia #下载yilia主题到themes目录下</code></p>
-<p>修改_config.yml配置文件</p>
-<ul>
-<li>theme: landscape 改为 theme: yilia</li>
-</ul>
-<p>然后三连组合拳<code>hexo clean</code>、<code>hexo g</code>、<code>hexo d</code></p>
-<h2 id="清理、生成、部署、查看"><a href="#清理、生成、部署、查看" class="headerlink" title="清理、生成、部署、查看"></a>清理、生成、部署、查看</h2><h2 id="碎碎念"><a href="#碎碎念" class="headerlink" title="碎碎念"></a>碎碎念</h2><ul>
-<li>.md文件我用的是Typora，这个是目前我感觉最好用的编辑markdown格式的软件，但这软件要钱。。。(不是，要钱你推荐给我？)，这里推荐个更加神奇的网站，<del>吾爱破解</del></li>
-<li>命令行推荐用WindowsTerminal，集成了CMD和WindowsPowerShell，美观又实用</li>
-<li>另外，<strong>每个<code>:</code>后都要加空格啊啊啊啊！！！title:,date:,tags都要加</strong>，真的坑</li>
-</ul>
-<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><ol>
-<li>[手把手教你从0开始搭建自己的个人博客 |无坑版视频教程]( hexo] <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Yb411a7ty/?share_source=copy_web&vd_source=0044b75ee69229e08e83f6de428832b0">https://www.bilibili.com/video/BV1Yb411a7ty/?share_source=copy_web&amp;vd_source=0044b75ee69229e08e83f6de428832b0</a>)</li>
-<li><a target="_blank" rel="noopener" href="https://blog.winnietech.cn/2023/09/20/Windows%E7%8E%AF%E5%A2%83%E4%B8%8B%E9%83%A8%E7%BD%B2%E5%8D%9A%E5%AE%A2%E8%BF%87%E7%A8%8B/">Windows下部署Hexo博客过程</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/mukes/article/details/115693833">Github安装详解</a></li>
-<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/2301_77285173/article/details/130189857#:~:text=%E5%85%B7%E4%BD%93%E6%96%B9%E6%B3%95%EF%BC%9A%20%E5%9C%A8%20hexo%20%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E7%9A%84source%E7%9B%AE%E5%BD%95%E4%B8%8B%EF%BC%8C%E6%96%B0%E5%BB%BA%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E5%A4%B9%E5%8F%ABimages%20%28%E5%90%8D%E5%AD%97%E9%9A%8F%E6%84%8F%29%EF%BC%8C%E5%B0%86%E8%A6%81%E6%8F%92%E5%85%A5%E7%9A%84%E5%9B%BE%E7%89%87%E6%94%BE%E5%9C%A8%E8%AF%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%AD%E3%80%82,md%E6%96%87%E6%A1%A3%E5%86%85%EF%BC%8C%E4%BD%BF%E7%94%A8%20%21%5B%E5%9B%BE%E7%89%87%5D%28%E5%9B%BE%E7%89%87%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80%20%22%E5%9B%BE%E7%89%87title%22%29%20%E7%9A%84%E6%A0%BC%E5%BC%8F%EF%BC%8C%E5%9C%86%E6%8B%AC%E5%8F%B7%E5%86%85%E7%9A%84%E9%93%BE%E6%8E%A5%E5%9C%B0%E5%9D%80%E5%86%99%20%28%2Fimages%2Fname.jpeg%29%E3%80%82">在hexo博客中插入图片的办法</a></li>
-</ol>
-<hr>
-<p>完</p>
-
+<h1 id="xx-启动！"><a href="#xx-启动！" class="headerlink" title="xx 启动！"></a><del>xx 启动！</del></h1>
+        
       
 
       
