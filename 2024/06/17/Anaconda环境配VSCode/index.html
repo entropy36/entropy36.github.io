@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2024/6 | Hexo</title>
+  <title>Anaconda环境配VSCode | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2024/06/index.html">
+  <meta name="description" content="前言想搞个Python小项目，参考了验证码图片生成码脚本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Anaconda环境配VSCode">
+<meta property="og:url" content="http://example.com/2024/06/17/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8DVSCode/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="前言想搞个Python小项目，参考了验证码图片生成码脚本">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-06-17T15:51:25.000Z">
+<meta property="article:modified_time" content="2024-06-17T16:19:55.767Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -150,76 +154,183 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Anaconda环境配VSCode" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Anaconda环境配VSCode
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2024" class="archive-year">2024</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/06/17/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8DVSCode/" class="archive-article-date">
+
+        
+        <a href="/2024/06/17/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8DVSCode/" class="archive-article-date">
   	<time datetime="2024-06-17T15:51:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-06-17</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/06/17/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8DVSCode/">Anaconda环境配VSCode</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>想搞个Python小项目，参考了验证码图片生成码脚本</p>
+<span id="more"></span>
 
-        <div class="article-info info-on-right">
-          
-          
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><p>废话不多说，直接开始</p>
+<h2 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h2><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/in546/article/details/117400839">Anaconda下载安装及配置conda源</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/orangerfun/article/details/118532065">Conda创建虚拟环境</a></p>
+<p>这里的坑是，如何判断是否进入虚拟环境</p>
+<p>命令提示符前要有<code>(base) </code>，这种，举个例子，我用的是终端命令行，Windows Terminal，用的是PowerShell，所以前缀是PS</p>
+<p>在没进入对应的虚拟环境前，命令提示符是<code> PS C:\Users\xxx&gt;</code>，这时候你执行<code>conda activate env_name</code>激活你创建的虚拟环境是无效的，你需要执行<code>conda init powershell</code>，然后重新打开Windows Terminal</p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/4e6d00d55506">解决Windows powershell无法激活conda虚拟环境的问题</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u010393510/article/details/130715238">解决PowerShell中conda activate指令无效的问题</a></p>
+<h2 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h2><p>没啥好说的，VSCode记得指定python环境路径，VSCode右下加可以切换虚拟环境</p>
+<p>如果创建了虚拟环境，导包时会缺少一些包，需要自己<code>pip</code>手动下载，这里的第二个坑是，没配置pip的镜像源，之前配置的Conda镜像源，下载时会报错</p>
+<p>在Conda中配置<code>pip</code>镜像源</p>
+<p><code>pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple</code></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/AI_eNyu/article/details/124322141">设置pip的镜像源</a></p>
+<hr>
+<p>完</p>
 
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2024/06/17/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8DVSCode/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2024/06/12/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2024-06-12T08:09:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2024-06-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2024/06/12/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">搭建基于hexo的个人博客,并托管到GitHub</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2024/06/12/%E6%90%AD%E5%BB%BA%E5%9F%BA%E4%BA%8Ehexo%E7%9A%84%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">搭建基于hexo的个人博客,并托管到GitHub</a>
-    </h1>
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Anaconda环境配VSCode" data-title="Anaconda环境配VSCode" data-url="http://example.com/2024/06/17/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8DVSCode/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://example.com/2024/06/17/Anaconda%E7%8E%AF%E5%A2%83%E9%85%8DVSCode/", 
+    sourceId: "Anaconda环境配VSCode",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -242,8 +353,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
